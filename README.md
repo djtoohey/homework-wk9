@@ -28,7 +28,11 @@ Pull requests are welcome. For major changes, please open an issue first to disc
     
 ## Tests
 after running node index.js, a README.md and LICENCE.md file should be generated.
-    
+
+![Licences](/Develop/imgs/licencedropdown.PNG "Licence drop down")
+![Final Output](/Develop/imgs/finaloutput.PNG "Final output") 
+![Readme Output](/Develop/imgs/readmeoutput.PNG "Example Readme.md")
+
 ## Questions
 GitHub: https://www.github.com/djtoohey/
     

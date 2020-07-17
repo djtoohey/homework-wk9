@@ -1,8 +1,8 @@
 
-# Readme Generator
-![MIT](https://img.shields.io/badge/licence-MIT-success?style=flat-square)
+# My Project
+![Unlicence](https://img.shields.io/badge/licence-Unlicence-success?style=flat-square)
 
-CLI program to create a professional readme.md and licence
+Description for my Project
     
 ## Table of Contents
 * [Installation](#installation)
@@ -20,16 +20,16 @@ CLI program to create a professional readme.md and licence
 node index.js
     
 ## Licence
-This project is licensed under the terms of the MIT.
+This project is licensed under the terms of the Unlicenced.
 
     
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Message me on github
     
 ## Tests
-after running node index.js, a README.md and LICENCE.md file should be generated.
+Tests
     
 ## Questions
-GitHub: https://www.github.com/djtoohey/
+GitHub: https://www.github.com/username/
     
-Email: contact@declantoohey.com
+Email: username@email.com
