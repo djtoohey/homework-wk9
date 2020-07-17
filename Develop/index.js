@@ -1,9 +1,8 @@
 const fs = require("fs");
-const genMD = require("./utils/generateMarkdown.js");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 const inquirer = require("inquirer");
 const util = require("util");
-const generateLicense = require("./generateLicense.js");
-
+const generateLicense = require("./utils/generateLicense.js");
 const asyncWriteFile = util.promisify(fs.writeFile);
 
 // array of questions for user
@@ -81,33 +80,9 @@ function writeToFile(fileName, data) {
 function init() {
     // console.log(genMD.generateMarkdown = "test");
     inquirer.prompt(questions).then(function (data = { title, description, install, usage, license, contributing, tests, ghUsername, email, fullname, year }) {
-        license = generateLicense(data);
-        const readme =
-            `# ${data.title}
-            
 
-${data.description}
+        const readme = generateMarkdown(data);
 
-## Installation:
-    ${data.install}
-
-## Usage
-${data.usage}
-
-## License
-${license}
-
-## Contributing
-${data.contributing}
-
-## Tests
-${data.tests}
-
-## Questions
-GitHub: https://www.github.com/${data.ghUsername}/
-
-Email: ${data.email}
-        `
         writeToFile("test.md", readme);
 
 
