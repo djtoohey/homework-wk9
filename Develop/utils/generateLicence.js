@@ -1,12 +1,21 @@
 
+const fs = require("fs");
+const util = require("util");
+const asyncWriteFile = util.promisify(fs.writeFile);
+
+const badgeMIT = `![MIT](https://img.shields.io/badge/licence-MIT-success?style=flat-square)`
+
+const badgeGNU = `![GNU](https://img.shields.io/badge/licence-GNU-success?style=flat-square)`
+
+const badgeUL = `![Unlicence](https://img.shields.io/badge/licence-Unlicence-success?style=flat-square)`
 
 
-// function to generate License for README
-function generateLicense(data) {
+// function to generate Licence for README
+function generateLicence(data) {
 
     const MIT = `MIT License
 
-Copyright (c) ${data.year} ${data.name}
+Copyright (c)  ${data.ghUsername} ${new Date().getFullYear()}
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -645,7 +654,7 @@ SOFTWARE.`;
     Program, unless a warranty or assumption of liability accompanies a
     copy of the Program in return for a fee.`
 
-    const Unlicense = `This is free and unencumbered software released into the public domain.
+    const Unlicenced = `This is free and unencumbered software released into the public domain.
 
     Anyone is free to copy, modify, publish, use, compile, sell, or
     distribute this software, either in source code form or as a compiled
@@ -670,17 +679,28 @@ SOFTWARE.`;
 
 For more information, please refer to <https://unlicense.org>`;
 
-    let licenseExport;
-    if (data.license === "MIT") {
-        licenseExport = MIT;
+
+    let licenceObj = {
+        licenceName: "",
+        badge: "",
+        text: "",
+    };
+    if (data.licence === "MIT") {
+        licenceObj = { licenceName: "MIT", badge: badgeMIT, text: MIT };
     }
-    else if (data.license === "GNU General Public License v3.0") {
-        licenseExport = GNU;
+    else if (data.licence === "GNU General Public License v3.0") {
+        licenceObj = { licenceName: "GNU", badge: badgeGNU, text: GNU };
     }
     else {
-        licenseExport = Unlicense;
+        licenceObj = { licenceName: "Unlicenced", badge: badgeUL, text: Unlicenced };
     }
-    return licenseExport;
+
+    writeToFile("LICENCE.md", licenceObj.text);
+    return licenceObj;
 }
 
-module.exports = generateLicense;
+function writeToFile(fileName, data) {
+    asyncWriteFile(fileName, data).then(() => console.log(`Ctrl + click -> Develop/LICENCE.md to see your generated licence.`));
+}
+
+module.exports = generateLicence;

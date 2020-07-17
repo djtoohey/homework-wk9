@@ -2,7 +2,7 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 const inquirer = require("inquirer");
 const util = require("util");
-const generateLicense = require("./utils/generateLicense.js");
+const generateLicence = require("./utils/generateLicence.js");
 const asyncWriteFile = util.promisify(fs.writeFile);
 
 // array of questions for user
@@ -28,14 +28,14 @@ const questions = [
         message: "Usage: ",
     },
     {
-        name: "license",
+        name: "licence",
         type: "list",
-        message: "License: ",
+        message: "Licence: ",
         choices:
             [
                 "MIT",
                 "GNU General Public License v3.0",
-                "Unlicense",
+                "Unlicence",
             ],
     },
     {
@@ -58,32 +58,24 @@ const questions = [
         type: "input",
         message: "Contact Email: ",
     },
-    {
-        name: "fullname",
-        type: "input",
-        message: "Name: ",
-    },
-    {
-        name: "year",
-        type: "number",
-        message: "Current Year: ",
-    },
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
-    asyncWriteFile(fileName, data).then(() => console.log("success?"));
+    asyncWriteFile(fileName, data).then(() =>
+        console.log(`Ctrl + click -> Develop/README.md to see your generated file.
+        [Suggestion: May want to add images to the Readme to improve understanding of your project]`));
 
 }
 
 // function to initialize program
 function init() {
     // console.log(genMD.generateMarkdown = "test");
-    inquirer.prompt(questions).then(function (data = { title, description, install, usage, license, contributing, tests, ghUsername, email, fullname, year }) {
+    inquirer.prompt(questions).then(function (data = { title, description, install, usage, licence, contributing, tests, ghUsername, email, fullname, year }) {
 
         const readme = generateMarkdown(data);
 
-        writeToFile("test.md", readme);
+        writeToFile("README.md", readme);
 
 
     })

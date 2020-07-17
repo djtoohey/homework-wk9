@@ -1,16 +1,19 @@
-const generateLicense = require("./generateLicense.js");
+const generateLicence = require("./generateLicence.js");
 
 // function to generate markdown for README
 function generateMarkdown(data) {
-    const license = generateLicense(data);
+
+    const licence = generateLicence(data);
     return `
 # ${data.title}
-    ${data.description}
+${licence.badge}
+
+${data.description}
     
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
-* [License](#license)
+* [Licence](#licence)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
@@ -22,8 +25,9 @@ function generateMarkdown(data) {
 ## Usage
 ${data.usage}
     
-## License
-${license}
+## Licence
+This project is licensed under the terms of the ${licence.licenceName}.
+
     
 ## Contributing
 ${data.contributing}
