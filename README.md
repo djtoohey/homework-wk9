@@ -14,10 +14,16 @@ CLI program to create a professional readme.md and licence
     
     
 ## Installation:
+insure NODE.js is installed, then run:
+    
     npm install
     
+
+
 ## Usage
-node index.js
+in a CLI using NODE.js, run:
+
+    node index.js
     
 ## Licence
 This project is licensed under the terms of the MIT.
@@ -27,11 +33,12 @@ This project is licensed under the terms of the MIT.
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
     
 ## Tests
-after running node index.js, a README.md and LICENCE.md file should be generated.
+after running node index.js, input the data that it is asking for eg. Title of Project, Description, Installation, Usage, etc. Two files will be created after completion, a README.md and a LICENCE.md file will be generated.
 
 ![Licences](/Develop/imgs/licencedropdown.PNG "Licence drop down")
 ![Final Output](/Develop/imgs/finaloutput.PNG "Final output") 
 ![Readme Output](/Develop/imgs/readmeoutput.PNG "Example Readme.md")
+![Test Video](/Develop/imgs/ReadmeGeneratorVideo.GIF "Test Video")
 
 ## Questions
 GitHub: https://www.github.com/djtoohey/
