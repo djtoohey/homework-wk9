@@ -1,8 +1,8 @@
 
-# My Project
-![Unlicence](https://img.shields.io/badge/licence-Unlicence-success?style=flat-square)
+# Note Taking Web App
+![MIT](https://img.shields.io/badge/licence-MIT-success?style=flat-square)
 
-Description for my Project
+Web app to write, save and delete notes using Node.js and Express.js
     
 ## Table of Contents
 * [Installation](#installation)
@@ -17,19 +17,19 @@ Description for my Project
     npm install
     
 ## Usage
-node index.js
+node server.js or access the live site at: https://thawing-atoll-44345.herokuapp.com/
     
 ## Licence
-This project is licensed under the terms of the Unlicenced.
+This project is licensed under the terms of the MIT.
 
     
 ## Contributing
-Message me on github
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
     
 ## Tests
-Tests
+
     
 ## Questions
-GitHub: https://www.github.com/username/
+GitHub: https://www.github.com/djtoohey/
     
-Email: username@email.com
+Email: contact@declantoohey.com
